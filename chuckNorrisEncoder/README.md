@@ -1,6 +1,6 @@
 # Chuck Norris Encoder
 
-#How to run it:
+# How to run it:
 type in your terminal:
 python3 callchuckNorrisEncoder.pyw
 
