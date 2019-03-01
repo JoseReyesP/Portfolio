@@ -22,3 +22,5 @@ output:
 It is a fun way to encode your messages to your friends. Right now the app does not decode, I will include that function in the future
 
 Have a nice one :)
+
+https://www.codingame.com/training
