@@ -1,5 +1,9 @@
 # Chuck Norris Encoder
 
+#How to run it:
+type in your terminal:
+python3 callchuckNorrisEncoder.pyw
+
 this app is complete based on the puzzle-code presented in codingame.com, I desided to convert it in a python desktop app, Below you will find the encoder rules and the link to codingame web page if you want to solve it by your own using the codingame platform.
 
 # Rules:
