@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>512</width>
-    <height>501</height>
+    <height>452</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -36,7 +36,7 @@
     <string>Introdusca su mensaje</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButtonConvertir">
+  <widget class="QPushButton" name="pushButtonEncode">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -46,12 +46,12 @@
     </rect>
    </property>
    <property name="text">
-    <string>Convertir</string>
+    <string>Encode</string>
    </property>
   </widget>
   <widget class="QTextEdit" name="output">
    <property name="enabled">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
    <property name="geometry">
     <rect>
@@ -73,6 +73,19 @@
    </property>
    <property name="text">
     <string>Copiar</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButtonDecode">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>200</y>
+     <width>89</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Decode</string>
    </property>
   </widget>
  </widget>
