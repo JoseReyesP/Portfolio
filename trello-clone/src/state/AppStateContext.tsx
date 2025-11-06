@@ -42,6 +42,10 @@ type AppContextProps = {
 
 const AppStateContext = createContext<AppContextProps>({} as AppContextProps);
 
+export const useAppState = () => {
+  return useContext(AppStateContext);
+};
+
 type AppStateProviderProps = {
   children: ReactNode;
 };
