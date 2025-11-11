@@ -2,6 +2,7 @@ import { createContext, useContext, FC, Dispatch, ReactNode } from "react";
 import { appStateReducer, AppState, List, Task } from "./appStateReducer";
 import { Action } from "./actions";
 import { useImmerReducer } from "use-immer";
+import { DragItem } from "../DragItem";
 
 const appData: AppState = {
   lists: [
@@ -21,15 +22,19 @@ const appData: AppState = {
       tasks: [{ id: "c3", text: "Begin to use static typing" }],
     },
   ],
+  draggedItem: null,
 };
 
-type AppContextProps = {
+type AppStateContextProps = {
+  draggedItem: DragItem | null;
   lists: List[];
   getTaskByListId(id: string): Task[];
   dispatch: Dispatch<Action>;
 };
 
-const AppStateContext = createContext<AppContextProps>({} as AppContextProps);
+const AppStateContext = createContext<AppStateContextProps>(
+  {} as AppStateContextProps,
+);
 
 export const useAppState = () => {
   return useContext(AppStateContext);
@@ -41,14 +46,16 @@ type AppStateProviderProps = {
 
 export const AppStateProvider: FC<AppStateProviderProps> = ({ children }) => {
   const [state, dispatch] = useImmerReducer(appStateReducer, appData);
-  const { lists } = state;
+  const { draggedItem, lists } = state;
 
   const getTaskByListId = (id: string) => {
     return lists.find((list) => list.id === id)?.tasks || [];
   };
 
   return (
-    <AppStateContext.Provider value={{ lists, getTaskByListId, dispatch }}>
+    <AppStateContext.Provider
+      value={{ draggedItem, lists, getTaskByListId, dispatch }}
+    >
       {children}
     </AppStateContext.Provider>
   );
